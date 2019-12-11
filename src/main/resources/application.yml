@@ -9,3 +9,11 @@ kieserver:
     enabled: true
   prometheus:
     enabled: true
+
+logging:
+  level:
+    ROOT: info
+    org:
+      eclipse: debug
+      apache:
+        maven: debug
