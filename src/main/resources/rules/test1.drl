@@ -1,0 +1,9 @@
+package rules
+
+rule "user"
+    when
+        $u:cn.beausoft.test.spring.drools.entity.User(name=="韩",age==18)
+    then
+        $u.setName("李四");
+        System.out.println($u.getName());
+    end
