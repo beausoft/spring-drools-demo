@@ -1,2 +1,2 @@
 # spring-drools-demo
-spring集成drools的demo
+简易的spring集成drools的例子
