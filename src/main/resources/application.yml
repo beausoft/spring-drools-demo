@@ -1,2 +1,11 @@
 server:
   port: 1235
+
+# Prometheus metrics monitoring config
+kieserver:
+  drools:
+    enabled: true
+  dmn:
+    enabled: true
+  prometheus:
+    enabled: true
