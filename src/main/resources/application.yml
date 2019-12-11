@@ -2,18 +2,19 @@ server:
   port: 1235
 
 # Prometheus metrics monitoring config
-kieserver:
-  drools:
-    enabled: true
-  dmn:
-    enabled: true
-  prometheus:
-    enabled: true
-
-logging:
-  level:
-    ROOT: info
-    org:
-      eclipse: debug
-      apache:
-        maven: debug
+#kieserver:
+#  drools:
+#    enabled: true
+#  dmn:
+#    enabled: true
+#  prometheus:
+#    enabled: true
+#
+#logging:
+#  level:
+#    ROOT: debug
+#    org:
+#      eclipse: debug
+#      apache:
+#        maven: debug
+#        # http: debug
