@@ -8,6 +8,8 @@ import org.kie.api.cdi.KSession;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.StatelessKieSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,8 +24,8 @@ public class HelloController {
     private KieBase kbase;
     @KSession("ksession1")
     private StatelessKieSession ksession1;
-    @KSession("ksession2")
-    private KieSession ksession2;
+    @Autowired
+    private ApplicationContext applicationContext; //https://docs.spring.io/spring/docs/5.2.2.RELEASE/spring-framework-reference/core.html#beans-factory-scopes-sing-prot-interaction
 
     @GetMapping("/hello")
     public Map<String, Object> helloWorld() {
@@ -34,13 +36,27 @@ public class HelloController {
 
     @GetMapping("/testUser")
     public User testUser() {
-        User user = new User();
-        user.setUsername("han");
-        user.setName("韩");
-        user.setAge(18);
-        ksession2.insert(user);
-        int a = ksession2.fireAllRules();
-        return user;
+        /**
+         * However, suppose you want the singleton-scoped bean to
+         * acquire a new instance of the prototype-scoped bean repeatedly at runtime.
+         * You cannot dependency-inject a prototype-scoped bean into your singleton bean,
+         * because that injection occurs only once, when the Spring container instantiates the singleton bean and
+         * resolves and injects its dependencies. If you need a new instance of a prototype bean at runtime
+         * more than once, see Method Injection
+         */
+        KieSession ksession2 = applicationContext.getBean("ksession2", KieSession.class);
+        try {
+            User user = new User();
+            user.setUsername("han");
+            user.setName("韩");
+            user.setAge(18);
+            ksession2.insert(user);
+            int a = ksession2.fireAllRules();
+            System.out.println(a);
+            return user;
+        } finally {
+            ksession2.dispose();
+        }
     }
 
 }

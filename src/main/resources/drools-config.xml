@@ -6,7 +6,7 @@
     <kie:kmodule id="sample_module">
         <kie:kbase name="testRules" packages="rules">
             <kie:ksession name="ksession1" type="stateless"/>
-            <kie:ksession name="ksession2"/>
+            <kie:ksession name="ksession2" scope="prototype"/>
         </kie:kbase>
     </kie:kmodule>
 
