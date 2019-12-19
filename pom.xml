@@ -51,17 +51,6 @@
             <groupId>org.kie</groupId>
             <artifactId>kie-spring</artifactId>
         </dependency>
-
-        <!-- Prometheus metrics monitoring
-        <dependency>
-            <groupId>org.kie.server</groupId>
-            <artifactId>kie-server-services-prometheus</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.kie.server</groupId>
-            <artifactId>kie-server-rest-prometheus</artifactId>
-        </dependency>
-        -->
     </dependencies>
 
     <build>
@@ -69,41 +58,23 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>cn.beausoft.test.spring.drools.SpringDroolsApp</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.kie</groupId>-->
-<!--                <artifactId>kie-maven-plugin</artifactId>-->
-<!--                <version>7.30.0.Final</version>-->
-<!--                <configuration>-->
-<!--                    <kiebases>-->
-<!--                        <kiebase>HelloKB</kiebase>-->
-<!--                    </kiebases>-->
-<!--                    <resDirectory>${basedir}/src/main/res/raw</resDirectory>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>touch</id>-->
-<!--                        <goals>-->
-<!--                            <goal>touch</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>initialize</phase>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>compile-kbase</id>-->
-<!--                        <goals>-->
-<!--                            <goal>build</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>compile</phase>-->
-<!--                    </execution>-->
-<!--                    <execution>-->
-<!--                        <id>serialize</id>-->
-<!--                        <goals>-->
-<!--                            <goal>serialize</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>compile</phase>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+
+            <plugin>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-maven-plugin</artifactId>
+                <version>7.30.0.Final</version>
+            </plugin>
         </plugins>
     </build>
 

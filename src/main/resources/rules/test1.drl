@@ -2,8 +2,8 @@ package rules
 
 rule "user"
     when
-        $u:cn.beausoft.test.spring.drools.entity.User(name=="韩",age==18)
+        $u:cn.beausoft.test.spring.drools.entity.User(name=="aaa",age==18)
     then
-        $u.setName("李四");
+        $u.setName("bbb");
         System.out.println($u.getName());
     end

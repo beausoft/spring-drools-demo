@@ -4,7 +4,7 @@
        xmlns:kie="http://drools.org/schema/kie-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://drools.org/schema/kie-spring http://drools.org/schema/kie-spring.xsd">
     <kie:kmodule id="sample_module">
-        <kie:kbase name="testRules" packages="rules">
+        <kie:kbase name="testRules" packages="rules" declarativeAgenda="true">
             <kie:ksession name="ksession1" type="stateless"/>
             <kie:ksession name="ksession2" scope="prototype">
                 <kie:ruleRuntimeEventListener ref="mockRuleRuntimeEventListener" />
