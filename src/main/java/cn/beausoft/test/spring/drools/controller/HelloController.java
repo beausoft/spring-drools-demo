@@ -1,13 +1,7 @@
 package cn.beausoft.test.spring.drools.controller;
 
-import cn.beausoft.test.spring.drools.entity.User;
-import org.kie.api.KieBase;
-import org.kie.api.cdi.KBase;
-import org.kie.api.cdi.KContainer;
-import org.kie.api.cdi.KSession;
-import org.kie.api.runtime.KieContainer;
+import cn.beausoft.test.spring.drools.model.User;
 import org.kie.api.runtime.KieSession;
-import org.kie.api.runtime.StatelessKieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +12,12 @@ import java.util.Map;
 
 @RestController
 public class HelloController {
-    @KContainer
-    private KieContainer kContainer;
-    @KBase("testRules")
-    private KieBase kbase;
-    @KSession("ksession1")
-    private StatelessKieSession ksession1;
+//    @KContainer
+//    private KieContainer kContainer;
+//    @KBase("testRules")
+//    private KieBase kbase;
+//    @KSession("ksession1")
+//    private StatelessKieSession ksession1;
     @Autowired
     private ApplicationContext applicationContext;
 

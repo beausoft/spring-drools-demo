@@ -2,7 +2,7 @@ package rules
 
 rule "user"
     when
-        $u:cn.beausoft.test.spring.drools.entity.User(name=="aaa",age==18)
+        $u:cn.beausoft.test.spring.drools.model.User(name=="aaa",age==18)
     then
         $u.setName("bbb");
         System.out.println($u.getName());

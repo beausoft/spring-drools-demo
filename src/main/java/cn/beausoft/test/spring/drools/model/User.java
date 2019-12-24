@@ -1,4 +1,4 @@
-package cn.beausoft.test.spring.drools.entity;
+package cn.beausoft.test.spring.drools.model;
 
 public class User {
     private String username;

@@ -1,6 +1,23 @@
 server:
   port: 1235
 
+kieserver:
+  serverId: SpringBoot
+  serverName: KIE Server SpringBoot
+  restContextPath: /rest
+  location: http://localhost:1235/rest/server
+  drools:
+    enabled: true
+  dmn:
+    enabled: false
+spring:
+  security:
+    user:
+      password: 123456
 logging:
   level:
     ROOT: info
+    org:
+      kie:
+        spring: debug
+      drools: debug
