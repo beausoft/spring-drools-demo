@@ -13,7 +13,5 @@
         </kie:kbase>
     </kie:kmodule>
 
-    <!-- https://docs.jboss.org/drools/release/7.30.0.Final/drools-docs/html_single/index.html#_important_note -->
-    <!-- <bean id="kiePostProcessor" class="org.kie.spring.KModuleBeanFactoryPostProcessor"/> -->
-    <bean class="org.kie.spring.annotations.KModuleAnnotationPostProcessor"/>
+    <bean class="cn.beausoft.test.spring.drools.SpringJarKModuleAnnotationPostProcessor" />
 </beans>
